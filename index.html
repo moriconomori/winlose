@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Win Lose</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
-  </head>
-  <body>
-    <div id="app">
-      {{ message }}
-    </div>
-
-    <script src="app.js"></script>
-  </body>
+<head>
+  <title>Win Lose</title>
+  <meta charset="UTF-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <div>{{ date }}</div>
+    <div><span>{{ matches }}戦{{ victories }}勝{{ defeats }}敗</span></div>
+    <button @click="addWin">WIN</button>
+    <button @click="addLose">LOSE</button>
+  </div>
+  <script src="app.js"></script>
+</body>
 </html>
