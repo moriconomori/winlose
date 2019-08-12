@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Win Lose</title>
+  <title>WinLose</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-oAOxQR6DkCoMliIh8yFnu25d7Eq/PHS21PClpwjOTeU2jRSq11vu66rf90/cZr47" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
-    <div>{{ date }}</div>
-    <div><span>{{ matches }}戦{{ victories }}勝{{ defeats }}敗</span></div>
-    <button @click="addWin">WIN</button>
-    <button @click="addLose">LOSE</button>
+    <div>
+      <h1>WinLose</h1>
+      <h2>戦績</h2>
+      <div class="winlose" v-bind:style="{ fontSize: fontSize + '%' }">
+        <div>{{ date }}</div>
+        <span>{{ matches }}戦{{ victories }}勝{{ defeats }}敗</span>
+      </div>
+      <div class="addButton">
+        <button class="button-success pure-button button-xlarge" @click="addWin">WIN</button>
+        <button class="button-error pure-button button-xlarge" @click="addLose">LOSE</button>
+        <button class="pure-button button-xsmall" @click="minusWin">-WIN</button>
+        <button class="pure-button button-xsmall" @click="minusLose">-LOSE</button>
+      </div>
+      <h2>設定</h2>
+      <h3>文字</h3>
+      <ul>
+        <li>
+          サイズ
+          <button class="pure-button pure-button-primary" @click="fontLarge">大</button>
+          <button class="pure-button pure-button-primary" @click="fontSmall">小</button>
+        </li>
+        <li>色</li>
+        <li>フォント</li>
+      </ul>
+      <h3>背景</h3>
+      <ul>
+        <li>色</li>
+      </ul>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
