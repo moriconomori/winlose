@@ -5,7 +5,7 @@ var app = new Vue({
     matches: 0,
     victories: 0,
     defeats: 0,
-    fontSize: 200
+    fontSize: 2.0
   },
   methods: {
     addWin: function (event) {
@@ -29,10 +29,12 @@ var app = new Vue({
       }
     },
     fontLarge: function (event) {
-      this.fontSize += 10;
+      this.fontSize += 0.1;
     },
     fontSmall: function (event) {
-      this.fontSize -= 10;
+      if (this.fontSize > 0.5) {
+        this.fontSize -= 0.1;
+      }
     }
   },
   mounted() {
